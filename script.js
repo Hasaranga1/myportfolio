@@ -471,6 +471,18 @@ document.addEventListener('DOMContentLoaded', () => {
             const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value;
 
+        // create massage
+        const fullMessage = `*New Portfolio Message*%0A%0A` +
+                    `👤 *Name:* ${name}%0A` +
+                    `📧 *Email:* ${email}%0A` +
+                    `📌 *Subject:* ${subject}%0A%0A` +
+                    `💬 *Message:*%0A${message}`;
+        
+        // WhatsApp link 
+        const url = `https://wa.me/94760329017?text=${encodeURIComponent(fullMessage)}`;
+
+        // WhatsApp open
+        window.open(url, '_blank');
             // Show success message
             alert(`Thank you, ${name}! Your message has been received. I will contact you at ${email} soon.`);
 
